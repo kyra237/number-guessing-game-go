@@ -49,25 +49,21 @@ func (g *Game) giveHint() {
 
 	fmt.Println("\n💡 Hint:")
 
-	// Hint 1: selalu ada
 	if g.SecretNumber%2 == 0 {
 		fmt.Println("- The number is EVEN")
 	} else {
 		fmt.Println("- The number is ODD")
 	}
 
-	// Hint 2: hanya untuk Easy & Medium
-	if g.Difficulty != Hard {
-		switch {
-		case g.SecretNumber <= 25:
-			fmt.Println("- Range: 1-25")
-		case g.SecretNumber <= 50:
-			fmt.Println("- Range: 26-50")
-		case g.SecretNumber <= 75:
-			fmt.Println("- Range: 51-75")
-		default:
-			fmt.Println("- Range: 76-100")
-		}
+	switch {
+	case g.SecretNumber <= 25:
+		fmt.Println("- Range: 1-25")
+	case g.SecretNumber <= 50:
+		fmt.Println("- Range: 26-50")
+	case g.SecretNumber <= 75:
+		fmt.Println("- Range: 51-75")
+	default:
+		fmt.Println("- Range: 76-100")
 	}
 }
 
